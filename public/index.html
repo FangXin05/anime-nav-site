@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>番剧万能导航网 - 稳定版</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./Zhu-Ye-Mian.css" />
+    <link rel="icon" type="image/x-icon" href="./favicon.ico?v=1" />
+  </head>
+
+  <body>
+    <div class="bg-animation" id="bgAnimation"></div>
+
+    <nav class="navbar">
+      <div class="logo">
+        <i class="fas fa-tv"></i>
+        <span>番剧万能导航</span>
+      </div>
+      <ul class="nav-links">
+        <li>
+          <a href="#searchArea"><i class="fas fa-search"></i> 搜索</a>
+        </li>
+        <li>
+          <a href="#addArea"><i class="fas fa-plus-circle"></i> 新增</a>
+        </li>
+        <li>
+          <a href="#resultArea"><i class="fas fa-list"></i> 结果</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="search-section" id="searchArea">
+      <h1 class="search-title">发现你下一部神番</h1>
+      <div class="search-box">
+        <input
+          type="text"
+          class="search-input"
+          placeholder="搜索番剧、漫画、资源..."
+          id="searchInput"
+        />
+        <button class="search-btn" type="button" onclick="handleSearch()">
+          <i class="fas fa-search"></i> 搜索
+        </button>
+        <button class="search-btn" type="button" onclick="loadSites()">
+          <i class="fas fa-rotate-left"></i> 全部
+        </button>
+      </div>
+    </section>
+
+    <section class="search-section" id="addArea">
+      <h2 class="search-title" style="font-size: 1.8rem">添加新站点</h2>
+
+      <form
+        id="addSiteForm"
+        class="search-box"
+        style="
+          flex-direction: column;
+          gap: 12px;
+          padding: 20px;
+          border-radius: 20px;
+          max-width: 700px;
+        "
+      >
+        <input
+          type="text"
+          id="siteTitle"
+          class="search-input"
+          placeholder="站点名称"
+        />
+        <input
+          type="text"
+          id="siteDesc"
+          class="search-input"
+          placeholder="站点描述"
+        />
+        <input
+          type="text"
+          id="siteTag"
+          class="search-input"
+          placeholder="站点标签，比如：评分社区"
+        />
+        <input
+          type="text"
+          id="siteUrl"
+          class="search-input"
+          placeholder="站点链接，比如：https://example.com"
+        />
+        <button type="submit" class="search-btn">添加站点</button>
+      </form>
+    </section>
+
+    <section class="search-section" id="resultArea">
+      <link rel="icon" type="image/x-icon" href="./favicon.ico?v=1" />
+      <h2 class="search-title" style="font-size: 1.8rem">站点列表</h2>
+      <div id="searchResults" class="cards-grid" style="margin-top: 2rem"></div>
+    </section>
+
+    <div class="container" style="display: none"></div>
+
+    <footer class="footer">
+      <div class="footer-links">
+        <a
+          href="#"
+          onclick="
+            showToast('本站仅供学习交流使用，请支持正版');
+            return false;
+          "
+        >
+          <i class="fas fa-info-circle"></i> 使用提示
+        </a>
+        <a
+          href="#"
+          onclick="
+            showToast('已发送反馈，感谢您的建议！');
+            return false;
+          "
+        >
+          <i class="fas fa-comment-dots"></i> 意见反馈
+        </a>
+      </div>
+      <p class="copyright">
+        © 2026 番剧万能导航网 - 稳定版 | 本站资源仅供学习交流，请支持正版平台
+      </p>
+    </footer>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="./Zhu-Ye-Mian-5.js?v=stable1"></script>
+  </body>
+</html>
